@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --primary: hsl(281, 83%, 54%);
+  --primary-dark: hsl(292, 42%, 14%);
+  --primary-light: hsl(275, 100%, 97%);
+  --primary-pale: hsl(292, 16%, 49%);
+  --black: hsl(0, 0%, 50%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Work Sans";
+}
+
+.container {
+  background-color: var(--primary-light);
+  height: 100%;
+  min-height: 100vh;
+  padding-bottom: 24px;
+}
+
+.header {
+  height: 320px;
+  background-color: var(--primary-dark);
+  background-image: url("../images/display.png");
+  background-size: cover;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.accordion {
+  margin: 24px;
+  margin-top: -148px;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.accordion__container {
+  padding: 24px 0;
+}
+
+.accordion__container:first-child {
+  padding-top: 0;
+}
+
+.accordion__container:last-child {
+  padding-bottom: 0;
+}
+
+.accordion__container:not(:last-child) {
+  border-bottom: 1px solid var(--primary-light);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.title__icon {
+  margin-right: 24px;
+}
+
+.title__text {
+  font-weight: 700;
+  font-size: 56px;
+  color: var(--primary-dark);
+}
+
+.accordion__tile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.accordion__tile .minus {
+  display: none;
+}
+
+.accordion__tile.active .plus {
+  display: none;
+}
+
+.accordion__tile.active .minus {
+  display: initial;
+}
+
+.accordion__tile h2 {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.accordion__tile:hover h2 {
+  color: var(--primary);
+}
+
+.accordion__tile .icon {
+  background-color: var(--primary);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.accordion__content {
+  padding-top: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion__content p {
+  margin-top: 24px;
+  font-size: 16px;
+  color: var(--primary-pale);
+  line-height: 1.5;
+}
